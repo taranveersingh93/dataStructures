@@ -209,4 +209,24 @@ public class LinkedList {
         }
         return null;
     }
+
+    public void reverse() {
+        Node temp = this.head;
+        this.head = this.tail;
+        this.tail = temp;
+        Node before;
+        Node after;
+        after = temp.next;
+        before = null;
+
+        for (int i = 0; i < this.length; i++) {
+            temp.next = before;
+            before = temp;
+            temp = after;
+            if (after != null) {
+                after = after.next;
+            }
+        }
+
+    }
 }
