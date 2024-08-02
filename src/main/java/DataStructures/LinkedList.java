@@ -38,4 +38,8 @@ public class LinkedList {
     public void getHead() {
         System.out.println(head.value);
     }
+
+    public void getTail() {
+        System.out.println(tail.value);
+    }
 }
