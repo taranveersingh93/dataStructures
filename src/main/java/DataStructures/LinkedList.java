@@ -42,4 +42,8 @@ public class LinkedList {
     public void getTail() {
         System.out.println(tail.value);
     }
+
+    public void getLength() {
+        System.out.println(length);
+    }
 }
