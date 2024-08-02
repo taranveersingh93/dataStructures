@@ -90,4 +90,31 @@ public class LinkedList {
         this.length--;
         return temp;
     }
+
+    public Node removeLast() {
+        Node temp = this.head;
+        Node pre = this.head;
+
+        if (this.length == 0) {
+            return null;
+        } else {
+            for (int i = 1; i <= this.length; i++) {
+                if (i == this.length) {
+                    pre.next = null;
+                    this.tail = pre;
+                    length--;
+
+                    if (length == 0) {
+                        this.head = null;
+                        this.tail = null;
+                    }
+                    return temp;
+                } else {
+                    pre = temp;
+                    temp = temp.next;
+                }
+            }
+        }
+        return null;
+    }
 }
