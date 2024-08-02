@@ -34,4 +34,8 @@ public class LinkedList {
         }
 
     }
+
+    public void getHead() {
+        System.out.println(head.value);
+    }
 }
