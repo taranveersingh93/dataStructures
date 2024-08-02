@@ -46,4 +46,17 @@ public class LinkedList {
     public void printLength() {
         System.out.println(length);
     }
+
+    public void append(int value) {
+        //create a new node and have tail and last node point to it
+        Node newNode = new Node(value);
+        if (this.length == 0) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+        this.length++;
+    }
 }
