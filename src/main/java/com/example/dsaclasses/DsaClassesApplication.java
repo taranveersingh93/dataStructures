@@ -9,7 +9,9 @@ public class DsaClassesApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DsaClassesApplication.class, args);
-
+        LinkedList myLinkedList = new LinkedList(11);
+        myLinkedList.reverse();
+        myLinkedList.printList();
     }
 
 }
