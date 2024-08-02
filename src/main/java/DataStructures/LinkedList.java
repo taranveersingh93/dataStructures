@@ -35,15 +35,15 @@ public class LinkedList {
 
     }
 
-    public void getHead() {
+    public void printHead() {
         System.out.println(head.value);
     }
 
-    public void getTail() {
+    public void printTail() {
         System.out.println(tail.value);
     }
 
-    public void getLength() {
+    public void printLength() {
         System.out.println(length);
     }
 }
