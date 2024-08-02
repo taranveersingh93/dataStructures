@@ -135,7 +135,7 @@ public class LinkedList {
     }
 
     public boolean setNodeByIndex(int index, int value) {
-        if (index < 0 || index >= this.length) {
+        if (index < 0 || index > this.length) {
             return false;
         } else {
             Node temp = this.head;
@@ -149,5 +149,38 @@ public class LinkedList {
             }
             return false;
         }
+    }
+
+    public boolean insertNodeAtIndex(int index, int value) {
+        if(index < 0 || index >this.length) {
+            return false;
+        } else {
+            Node temp = this.head;
+            Node insertedNode = new Node(value);
+            if (index == 0) {
+                insertedNode.next = temp;
+                this.head = insertedNode;
+                this.length++;
+                return true;
+            } else if (index == this.length) {
+                insertedNode.next = null;
+                this.tail.next = insertedNode;
+                this.tail = insertedNode;
+                this.length++;
+                return true;
+            } else {
+                for (int i = 0; i < this.length; i++) {
+                    if (i == index - 1) {
+                        insertedNode.next = temp.next;
+                        temp.next = insertedNode;
+                        this.length++;
+                        return true;
+                    } else {
+                        temp = temp.next;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }
