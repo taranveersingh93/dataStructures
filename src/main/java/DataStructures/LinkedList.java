@@ -24,4 +24,14 @@ public class LinkedList {
             this.value = value;
         }
     }
+
+    public void printList() {
+        Node temp = this.head;
+
+        for (int i = 0; i < this.length; i++) {
+            System.out.println(temp.value);
+            temp = temp.next;
+        }
+
+    }
 }
