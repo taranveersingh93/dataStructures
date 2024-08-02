@@ -59,4 +59,19 @@ public class LinkedList {
         }
         this.length++;
     }
+
+    public void prepend(int value) {
+        //create a new node that points to first node and have head point to it then.
+        Node newNode = new Node(value);
+
+        if (this.length == 0) {
+            newNode.next = null;
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+    }
 }
