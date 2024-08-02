@@ -133,4 +133,21 @@ public class LinkedList {
         }
         return null;
     }
+
+    public boolean setNodeByIndex(int index, int value) {
+        if (index < 0 || index >= this.length) {
+            return false;
+        } else {
+            Node temp = this.head;
+            for (int i = 0; i < this.length; i++) {
+                if (i == index) {
+                    temp.value = value;
+                    return true;
+                } else {
+                    temp = temp.next;
+                }
+            }
+            return false;
+        }
+    }
 }
