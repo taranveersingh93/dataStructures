@@ -183,4 +183,30 @@ public class LinkedList {
         }
         return false;
     }
+
+    public Node remove(int index) {
+        if (index < 0 || index >= this.length) {
+            return null;
+        } else if (index == 0) {
+            Node temp = this.head;
+            this.head = this.head.next;
+            this.length--;
+            return temp;
+        } else {
+            Node temp = this.head;
+            for (int i = 0; i < this.length; i++) {
+                if (i == index - 1) {
+                    Node nextNode = temp.next.next;
+                    Node deleteNode = temp.next;
+                    temp.next = nextNode;
+                    deleteNode.next = null;
+                    this.length--;
+                    return deleteNode;
+                } else {
+                    temp = temp.next;
+                }
+            }
+        }
+        return null;
+    }
 }
