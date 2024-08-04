@@ -241,4 +241,28 @@ package DataStructures;public class DoublyLinkedList {
         this.length--;
         return temp;
     }
+
+    public void reverse() {
+        if (this.length == 0 || this.length == 1) {
+            return;
+        } else {
+            Node temp = this.head;
+            this.head = this.tail;
+            this.tail = temp;
+
+            Node before = null;
+            Node after = temp.next;
+            while (temp != null) {
+                temp.next = before;
+                temp.prev = after;
+
+                before = temp;
+                temp = after;
+                if (after != null) {
+                    after = after.next;
+                }
+            }
+
+        }
+    }
 }
