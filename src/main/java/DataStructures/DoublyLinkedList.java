@@ -19,5 +19,7 @@ package DataStructures;public class DoublyLinkedList {
         }
     }
 
-
+    public void printHead() {
+        System.out.print("Head: "+this.head.value);
+    }
 }
