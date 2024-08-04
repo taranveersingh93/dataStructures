@@ -11,9 +11,7 @@ public class DsaClassesApplication {
     public static void main(String[] args) {
         SpringApplication.run(DsaClassesApplication.class, args);
         DoublyLinkedList myDLL = new DoublyLinkedList(11);
-        myDLL.printHead();
-        myDLL.printTail();
-        myDLL.printLength();
+        myDLL.append(3);
         myDLL.printList();
     }
 

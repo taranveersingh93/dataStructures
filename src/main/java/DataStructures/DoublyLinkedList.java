@@ -38,4 +38,18 @@ package DataStructures;public class DoublyLinkedList {
             temp = temp.next;
         }
     }
+
+    public void append(int value) {
+        Node newNode = new Node(value);
+        if (this.head == null) {
+            this.head = newNode;
+            this.tail = newNode;
+        }   else {
+            Node tailNode = this.tail;
+            tailNode.next = newNode;
+            newNode.prev = tailNode;
+            this.tail = newNode;
+        }
+            this.length++;
+    }
 }
