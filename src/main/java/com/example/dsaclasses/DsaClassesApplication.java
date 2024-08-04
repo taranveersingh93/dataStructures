@@ -10,10 +10,10 @@ public class DsaClassesApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DsaClassesApplication.class, args);
-        DoublyLinkedList myDLL = new DoublyLinkedList(11);
-        myDLL.append(3);
-
-        myDLL.insert(2, 2);
+        DoublyLinkedList myDLL = new DoublyLinkedList(0);
+        myDLL.append(1);
+        myDLL.append(2);
+        myDLL.remove(2);
         myDLL.printList();
     }
 

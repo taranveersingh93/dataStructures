@@ -195,4 +195,50 @@ package DataStructures;public class DoublyLinkedList {
         this.length++;
         return true;
     }
+
+    public Node remove(int index) {
+        if (index < 0 || index >= this.length) {
+            return null;
+        }
+
+        if (index == 0) {
+            Node temp = this.head;
+            Node next = temp.next;
+            next.prev = null;
+            temp.next = null;
+            this.head = next;
+            this.length--;
+            return temp;
+        }
+
+        if (index == this.length-1) {
+            Node temp = this.tail;
+            Node prev = temp.prev;
+            prev.next = null;
+            temp.prev = null;
+            this.tail = prev;
+            this.length--;
+            return temp;
+        }
+
+        Node temp = this.head;
+        if (index < this.length/2) {
+            for (int i = 0; i < index; i++) {
+                temp = temp.next;
+            }
+        } else {
+            temp = this.tail;
+            for (int i = this.length - 1; i > index; i--) {
+                temp = temp.prev;
+            }
+        }
+        Node prevNode = temp.prev;
+        Node after = temp.next;
+        prevNode.next = after;
+        after.prev = prevNode;
+        temp.next = null;
+        temp.prev = null;
+        this.length--;
+        return temp;
+    }
 }
