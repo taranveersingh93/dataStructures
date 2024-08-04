@@ -133,4 +133,66 @@ package DataStructures;public class DoublyLinkedList {
 
         return temp;
     }
+
+    public boolean setByIndex(int index, int value) {
+        if (index < 0 || index > this.length) {
+            return false;
+        }
+        Node temp = this.head;
+        if (index < this.length/2) {
+            for (int i = 0; i < index; i++) {
+                temp = temp.next;
+            }
+        } else {
+            temp = this.tail;
+            for (int i = this.length - 1; i > index; i--) {
+                temp = temp.prev;
+            }
+        }
+        temp.value = value;
+        return true;
+    }
+
+    public boolean insert(int index, int value) {
+        if (index < 0 || index > this.length) {
+            return false;
+        }
+
+        Node newNode = new Node(value);
+        if (index == 0) {
+            Node oldHead = this.head;
+            newNode.next = oldHead;
+            oldHead.prev = newNode;
+            this.head = newNode;
+            this.length++;
+            return true;
+        }
+
+        if (index == this.length) {
+            Node oldTail = this.tail;
+            oldTail.next = newNode;
+            newNode.prev = oldTail;
+            this.tail = newNode;
+            this.length++;
+            return true;
+        }
+        Node temp = this.head;
+        if (index < this.length/2) {
+            for (int i = 0; i < index; i++) {
+                temp = temp.next;
+            }
+        } else {
+            temp = this.tail;
+            for (int i = this.length - 1; i > index; i--) {
+                temp = temp.prev;
+            }
+        }
+        Node prevNode = temp.prev;
+        prevNode.next = newNode;
+        newNode.next = temp;
+        newNode.prev = prevNode;
+        temp.prev = newNode;
+        this.length++;
+        return true;
+    }
 }
