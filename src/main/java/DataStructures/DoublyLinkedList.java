@@ -265,4 +265,17 @@ package DataStructures;public class DoublyLinkedList {
 
         }
     }
+
+    public boolean isPalindrome() {
+        Node start = this.head;
+        Node end = this.tail;
+        for (int i = 0; i < this.length/2; i++) {
+            if (start.value != end.value) {
+                return false;
+            }
+            start = start.next;
+            end = end.prev;
+        }
+        return true;
+    }
 }
