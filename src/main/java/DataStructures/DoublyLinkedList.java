@@ -114,4 +114,23 @@ package DataStructures;public class DoublyLinkedList {
         }
         return removedNode;
     }
+
+    public Node getByIndex(int index) {
+        if (index < 0 || index > this.length) {
+            return null;
+        }
+        Node temp = this.head;
+        if (index < this.length/2) {
+            for (int i = 0; i < index; i++) {
+                temp = temp.next;
+            }
+        } else {
+            temp = this.tail;
+            for (int i = this.length - 1; i > index; i-- ) {
+                temp = temp.prev;
+            }
+        }
+
+        return temp;
+    }
 }
