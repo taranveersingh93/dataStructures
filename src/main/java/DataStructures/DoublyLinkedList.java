@@ -90,4 +90,28 @@ package DataStructures;public class DoublyLinkedList {
         }
         this.length++;
     }
+
+    public Node removeFirst() {
+        if (this.length == 0) {
+            return null;
+        }
+        if (this.length == 1) {
+            Node removedNode = this.head;
+            this.head = null;
+            this.tail = null;
+            this.length--;
+            return removedNode;
+        }
+        Node removedNode = this.head;
+        Node newHead = removedNode.next;
+        removedNode.next = null;
+        newHead.prev = null;
+        this.head = newHead;
+        this.length--;
+        if (this.length == 0) {
+            this.head = null;
+            this.tail = null;
+        }
+        return removedNode;
+    }
 }

@@ -11,9 +11,13 @@ public class DsaClassesApplication {
     public static void main(String[] args) {
         SpringApplication.run(DsaClassesApplication.class, args);
         DoublyLinkedList myDLL = new DoublyLinkedList(11);
-        myDLL.removeLast();
-        myDLL.prepend(1);
+        myDLL.append(2);
         myDLL.printList();
+
+        System.out.println(myDLL.removeFirst().value);
+
+        System.out.println(myDLL.removeFirst().value);
+        System.out.println(myDLL.removeFirst());
     }
 
 }
