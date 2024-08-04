@@ -11,7 +11,7 @@ package DataStructures;public class DoublyLinkedList {
     }
 
     public class Node {
-        int value;
+        public int value;
         Node next;
         Node prev;
         public Node(int value) {
@@ -51,5 +51,28 @@ package DataStructures;public class DoublyLinkedList {
             this.tail = newNode;
         }
             this.length++;
+    }
+
+    public Node removeLast() {
+        if (this.length == 0) {
+            return null;
+        }
+        if (this.length == 1) {
+            Node temp = this.head;
+            this.head = null;
+            this.tail = null;
+            return temp;
+        }
+        Node deleteNode = this.tail;
+        Node newTail = deleteNode.prev;
+        this.tail = newTail;
+        deleteNode.next = null;
+        newTail.next = null;
+        this.length--;
+        if (this.length == 0) {
+            this.head = null;
+            this.tail = null;
+        }
+        return deleteNode;
     }
 }
