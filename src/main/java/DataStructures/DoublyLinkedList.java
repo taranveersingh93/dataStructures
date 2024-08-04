@@ -20,14 +20,22 @@ package DataStructures;public class DoublyLinkedList {
     }
 
     public void printHead() {
-        System.out.print("Head: "+this.head.value);
+        System.out.print("Head: "+this.head.value+"\n");
     }
 
     public void printTail() {
-        System.out.print("Tail: "+this.tail.value);
+        System.out.print("Tail: "+this.tail.value+"\n");
     }
 
     public void printLength() {
-        System.out.print("Length: "+this.length);
+        System.out.print("Length: "+this.length+"\n");
+    }
+
+    public void printList() {
+        Node temp = this.head;
+        while(temp != null) {
+            System.out.print(temp.value+"\n");
+            temp = temp.next;
+        }
     }
 }
