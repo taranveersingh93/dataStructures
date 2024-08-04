@@ -61,6 +61,7 @@ package DataStructures;public class DoublyLinkedList {
             Node temp = this.head;
             this.head = null;
             this.tail = null;
+            this.length--;
             return temp;
         }
         Node deleteNode = this.tail;
@@ -74,5 +75,19 @@ package DataStructures;public class DoublyLinkedList {
             this.tail = null;
         }
         return deleteNode;
+    }
+
+    public void prepend (int value) {
+        Node newNode = new Node(value);
+        if (this.length == 0) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            Node oldHead = this.head;
+            this.head = newNode;
+            newNode.next = oldHead;
+            oldHead.prev = newNode;
+        }
+        this.length++;
     }
 }
