@@ -26,4 +26,8 @@ package DataStructures;public class DoublyLinkedList {
     public void printTail() {
         System.out.print("Tail: "+this.tail.value);
     }
+
+    public void printLength() {
+        System.out.print("Length: "+this.length);
+    }
 }
