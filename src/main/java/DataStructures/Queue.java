@@ -31,4 +31,12 @@ public class Queue {
     public void getLength() {
         System.out.println("Length: "+length);
     }
+
+    public void printQueue() {
+        Node temp = this.first;
+        while(temp != null) {
+            System.out.println(temp.value);
+            temp = temp.next;
+        }
+    }
 }
