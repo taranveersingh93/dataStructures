@@ -33,4 +33,11 @@ public class Stack {
             temp = temp.next;
         }
     }
+
+    public void push(int value) {
+        Node newNode = new Node(value);
+        newNode.next = this.top;
+        this.top = newNode;
+        this.height++;
+    }
 }
