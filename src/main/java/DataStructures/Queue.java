@@ -6,7 +6,7 @@ public class Queue {
     private int length;
 
     public class Node {
-        int value;
+        public int value;
         Node next;
 
         public Node(int value) {
@@ -50,5 +50,20 @@ public class Queue {
             this.last = newNode;
         }
         this.length++;
+    }
+
+    public Node dequeue() {
+        if (this.length == 0) {
+            return null;
+        }
+        Node removedNode = this.first;
+        this.first = this.first.next;
+        removedNode.next= null;
+        this.length--;
+        if (this.length == 0) {
+            this.last = null;
+            this.first = null;
+        }
+        return removedNode;
     }
 }

@@ -14,10 +14,11 @@ public class DsaClassesApplication {
     public static void main(String[] args) {
         SpringApplication.run(DsaClassesApplication.class, args);
         Queue myQueue = new Queue(7);
-        myQueue.printFirst();
-        myQueue.printLast();
-        myQueue.printLength();
-        myQueue.printQueue();
+        myQueue.enqueue(23);
+
+        System.out.println(myQueue.dequeue().value);
+        System.out.println(myQueue.dequeue().value);
+        System.out.println(myQueue.dequeue());
 
     }
 
