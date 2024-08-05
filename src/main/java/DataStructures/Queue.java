@@ -19,4 +19,9 @@ public class Queue {
         this.last = this.first;
         this.length = 1;
     }
+
+    public void getFirst() {
+        System.out.println("First: "+first.value);
+    }
+
 }
