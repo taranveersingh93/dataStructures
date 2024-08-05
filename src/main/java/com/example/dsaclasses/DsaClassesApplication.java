@@ -12,6 +12,8 @@ public class DsaClassesApplication {
     public static void main(String[] args) {
         SpringApplication.run(DsaClassesApplication.class, args);
         Stack myStack = new Stack(4);
+        myStack.push(55);
+        myStack.pop();
         myStack.push(3);
         myStack.printStack();
     }

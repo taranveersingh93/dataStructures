@@ -40,4 +40,16 @@ public class Stack {
         this.top = newNode;
         this.height++;
     }
+
+    public Node pop() {
+        if (this.height == 0) {
+            return null;
+        }
+
+        Node removedNode = this.top;
+        this.top = this.top.next;
+        removedNode.next = null;
+        this.height--;
+        return removedNode;
+    }
 }
