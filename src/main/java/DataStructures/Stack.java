@@ -17,4 +17,12 @@ public class Stack {
         top = newNode;
         this.height = 1;
     }
+
+    public void printTop() {
+        System.out.println("Top: "+this.top.value);
+    }
+
+
+
+
 }
