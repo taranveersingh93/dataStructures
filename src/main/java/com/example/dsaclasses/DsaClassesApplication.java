@@ -14,6 +14,7 @@ public class DsaClassesApplication {
     public static void main(String[] args) {
         SpringApplication.run(DsaClassesApplication.class, args);
         Queue myQueue = new Queue(7);
+        myQueue.getFirst();
 
     }
 

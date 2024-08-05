@@ -20,15 +20,15 @@ public class Queue {
         this.length = 1;
     }
 
-    public void getFirst() {
+    public void printFirst() {
         System.out.println("First: "+first.value);
     }
 
-    public void getLast() {
+    public void printLast() {
         System.out.println("Last: "+last.value);
     }
 
-    public void getLength() {
+    public void printLength() {
         System.out.println("Length: "+length);
     }
 
