@@ -27,4 +27,8 @@ public class Queue {
     public void getLast() {
         System.out.println("Last: "+last.value);
     }
+
+    public void getLength() {
+        System.out.println("Length: "+length);
+    }
 }
