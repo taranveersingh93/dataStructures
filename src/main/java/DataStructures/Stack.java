@@ -22,7 +22,9 @@ public class Stack {
         System.out.println("Top: "+this.top.value);
     }
 
-
+    public void printHeight() {
+        System.out.println("Height: "+this.height);
+    }
 
 
 }
