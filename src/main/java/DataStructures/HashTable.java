@@ -16,13 +16,14 @@ public class HashTable {
             this.key = key;
             this.value = value;
         }
-
+    }
         public void printTable() {
             for (int i = 0; i < dataMap.length; i++) {
                 System.out.println(i+": ");
                 Node temp = dataMap[i];
                 while (temp != null) {
-                    System.out.print("   {"+temp.key+"= "+temp.value+"} ");
+                    System.out.print("   {"+temp.key+"= "+temp.value+"} "+"\n");
+                    temp = temp.next;
                 }
             }
         }
@@ -32,14 +33,15 @@ public class HashTable {
             char[] keyChars = key.toCharArray();
             for (int i = 0; i < keyChars.length; i++) {
                 int asciiValue = keyChars[i];
-                hash += (asciiValue*31)%dataMap.length;
+                hash += (asciiValue*31);
             }
+            hash %= dataMap.length;
             return hash;
         }
 
         public void set(String key, int value) {
             int index = hash(key);
-            Node newNode = new Node(key, value)
+            Node newNode = new Node(key, value);
             if (dataMap[index] == null) {
                 dataMap[index] = newNode;
             } else {
@@ -49,8 +51,7 @@ public class HashTable {
                 }
                 temp.next = newNode;
             }
-            dataMap[index] = new Node(key, value);
-        }
+
     }
 
 }
