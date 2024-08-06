@@ -16,6 +16,16 @@ public class HashTable {
             this.key = key;
             this.value = value;
         }
+
+        public void printTable() {
+            for (int i = 0; i < dataMap.length; i++) {
+                System.out.println(i+": ");
+                Node temp = dataMap[i];
+                while (temp != null) {
+                    System.out.print("   {"+temp.key+"= "+temp.value+"} ");
+                }
+            }
+        }
     }
 
 }
