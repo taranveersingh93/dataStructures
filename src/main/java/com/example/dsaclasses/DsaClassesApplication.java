@@ -17,9 +17,8 @@ public class DsaClassesApplication {
         myHashTable.set("lumber", 80);
         myHashTable.set("bolts", 200);
         myHashTable.set("screws", 140);
-        System.out.println(myHashTable.get("nails"));
-        System.out.println(myHashTable.get("tile"));
-        myHashTable.printTable();
+        System.out.println(myHashTable.keys());
+
     }
 
 }
