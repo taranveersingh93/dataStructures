@@ -50,7 +50,15 @@ public class HashTable {
         } else {
             Node temp = dataMap[index];
             while(temp.next != null) {
+                if (temp.key.equals(key)) {
+                    temp.value = value;
+                    return;
+                }
                 temp = temp.next;
+            }
+            if (temp.key.equals(key)) {
+                temp.value = value;
+                return;
             }
             temp.next = newNode;
         }
