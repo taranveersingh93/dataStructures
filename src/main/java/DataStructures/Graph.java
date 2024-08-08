@@ -23,9 +23,20 @@ public class Graph {
     public boolean addEdge (String from, String to) {
         if (!adjList.containsKey(from) || !adjList.containsKey(to)) {
             return false;
+        } else {
+            adjList.get(from).add(to);
+            adjList.get(to).add(from);
+            return true;
         }
-        adjList.get(from).add(to);
-        adjList.get(to).add(from);
-        return true;
+    }
+
+    public boolean removeEdge (String from, String to) {
+        if (!adjList.containsKey(from) || !adjList.containsKey(to)) {
+            return false;
+        } else {
+            adjList.get(from).remove(to);
+            adjList.get(to).remove(from);
+            return true;
+        }
     }
 }
