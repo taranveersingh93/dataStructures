@@ -10,15 +10,16 @@ public class DsaClassesApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DsaClassesApplication.class, args);
-        Graph myGraph = new Graph();
-        myGraph.addVertex("A");
-        myGraph.addVertex("B");
-        myGraph.addVertex("C");
-        myGraph.addEdge("A", "B");
-        myGraph.addEdge("A", "C");
-        myGraph.addEdge("B", "C");
-        myGraph.removeVertex("C");
-        myGraph.printGraph();
+        Heap myHeap = new Heap();
+        myHeap.insert(99);
+        myHeap.insert(72);
+        myHeap.insert(61);
+        myHeap.insert(58);
+        System.out.println(myHeap.getHeap());
+        myHeap.insert(100);
+        System.out.println(myHeap.getHeap());
+        myHeap.insert(75);
+        System.out.println(myHeap.getHeap());
     }
 
 }
