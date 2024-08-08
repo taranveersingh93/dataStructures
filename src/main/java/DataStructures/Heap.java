@@ -50,12 +50,34 @@ public class Heap {
             return temp;
         }
 
-        int removedNumber = heap.remove(0);
+        int removedNumber = heap.get(0);
         int lastIndex = heap.size() - 1;
         heap.set(0, heap.get(lastIndex));
         heap.remove(lastIndex);
 
         sinkdown(0);
         return removedNumber;
+    }
+
+    public void sinkdown(int index) {
+       int startIndex = index;
+       while (true) {
+           int leftIndex = leftChild(index);
+           int rightIndex = rightChild(index);
+           if (leftIndex < heap.size() && heap.get(leftIndex) > heap.get(startIndex)) {
+               startIndex = leftIndex;
+           }
+           if (rightIndex < heap.size() && heap.get(rightIndex) > heap.
+                   get(startIndex) ) {
+               startIndex = rightIndex;
+           }
+           if (startIndex != index) {
+               swap(index, startIndex);
+               index = startIndex;
+           } else {
+               return;
+           }
+       }
+
     }
 }
