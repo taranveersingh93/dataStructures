@@ -10,18 +10,15 @@ public class DsaClassesApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DsaClassesApplication.class, args);
-        BinarySearchTree myBST = new BinarySearchTree(47);
+        HashTable myHashTable = new HashTable(7);
 
-
-        myBST.insert(21);
-        myBST.insert(76);
-        myBST.insert(18);
-        myBST.insert(52);
-        myBST.insert(82);
-        myBST.insert(27);
-        System.out.println(myBST.contains(76));
-        System.out.println(myBST.contains(21));
-        System.out.println(myBST.contains(17));
+        myHashTable.set("nails",100);
+        myHashTable.set("tile", 50);
+        myHashTable.set("tile", 60);
+        myHashTable.set("lumber", 80);
+        myHashTable.set("bolts", 200);
+        myHashTable.set("screws", 140);
+        myHashTable.printTable();
 
     }
 
