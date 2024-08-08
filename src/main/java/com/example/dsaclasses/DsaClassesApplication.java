@@ -10,16 +10,9 @@ public class DsaClassesApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DsaClassesApplication.class, args);
-        HashTable myHashTable = new HashTable(7);
-
-        myHashTable.set("nails",100);
-        myHashTable.set("tile", 50);
-        myHashTable.set("tile", 60);
-        myHashTable.set("lumber", 80);
-        myHashTable.set("bolts", 200);
-        myHashTable.set("screws", 140);
-        myHashTable.printTable();
-
+        Graph myGraph = new Graph();
+        myGraph.addVertex("A");
+        myGraph.printGraph();
     }
 
 }
