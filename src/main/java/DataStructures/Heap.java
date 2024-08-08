@@ -39,4 +39,23 @@ public class Heap {
             currentIndex = parent(currentIndex);
         }
     }
+
+    public Integer remove() { //can only remove parent node
+        if (heap.size() == 0) {
+            return null;
+        }
+        if (heap.size() == 1) {
+            int temp = heap.get(0);
+            heap.remove(0);
+            return temp;
+        }
+
+        int removedNumber = heap.remove(0);
+        int lastIndex = heap.size() - 1;
+        heap.set(0, heap.get(lastIndex));
+        heap.remove(lastIndex);
+
+        sinkdown(0);
+        return removedNumber;
+    }
 }
