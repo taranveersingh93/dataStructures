@@ -19,4 +19,13 @@ public class Graph {
     public void printGraph() {
         System.out.println(adjList);
     }
+
+    public boolean addEdge (String from, String to) {
+        if (!adjList.containsKey(from) || !adjList.containsKey(to)) {
+            return false;
+        }
+        adjList.get(from).add(to);
+        adjList.get(to).add(from);
+        return true;
+    }
 }
