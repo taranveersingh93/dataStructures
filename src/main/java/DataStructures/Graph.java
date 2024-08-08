@@ -39,4 +39,18 @@ public class Graph {
             return true;
         }
     }
+
+    public boolean removeVertex (String vertex) {
+        if (!adjList.containsKey(vertex)) {
+            return false;
+        } else {
+            ArrayList<String> links = adjList.get(vertex); //get all vertices that have an edge with vertex
+            for (int i = 0; i < links.size(); i++) { // loop through those vertices
+                ArrayList<String> linkedVertices = adjList.get(links.get(i)); //get their corresponding edges
+                linkedVertices.remove(vertex); // remove vertex
+            }
+            adjList.remove(vertex); //finally remove the key/value of the vertex itself
+            return true;
+        }
+    }
 }

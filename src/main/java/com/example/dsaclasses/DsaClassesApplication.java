@@ -17,7 +17,7 @@ public class DsaClassesApplication {
         myGraph.addEdge("A", "B");
         myGraph.addEdge("A", "C");
         myGraph.addEdge("B", "C");
-        myGraph.removeEdge("B", "A");
+        myGraph.removeVertex("C");
         myGraph.printGraph();
     }
 
