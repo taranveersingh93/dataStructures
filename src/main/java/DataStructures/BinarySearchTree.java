@@ -104,4 +104,45 @@ public class BinarySearchTree {
     public void rInsert(int value) {
         rInsert(this.root, value);
     }
+
+    private Node deleteNode (Node currentNode, int value) {
+        if (currentNode == null) {
+            return null;
+        }
+        if (value < currentNode.value) {
+            currentNode.left = deleteNode(currentNode.left, value);
+        }
+        else if (value > currentNode.value) {
+            currentNode.right = deleteNode(currentNode.right, value);
+        } else {
+            if (currentNode.left == null && currentNode.right == null) { //leaf node
+                return null;
+            }
+            if (currentNode.left == null) { //node only on right
+                return currentNode.right;
+            }
+            if (currentNode.right == null) { //node only on left
+                return currentNode.left;
+            }
+            // nodes on both sides
+            int subTreeMin = minValue(currentNode.right); //get the min value on right side
+            currentNode.value = subTreeMin; //replace currentNode with that val
+            currentNode.right = deleteNode(currentNode.right, subTreeMin); //remove the leaf min
+        }
+        return currentNode;
+    }
+
+    public int minValue(Node currentNode) {
+        if (currentNode == null) {
+            return 0;
+        }
+        if (currentNode.left == null) {
+            return currentNode.value;
+        }
+        return minValue(currentNode.left);
+    }
+    public void rDelete(int value) {
+        Node currentNode = this.root;
+
+    }
 }

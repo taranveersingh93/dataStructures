@@ -18,11 +18,8 @@ public class DsaClassesApplication {
         myBST.insert(27);
         myBST.insert(52);
         myBST.insert(82);
-        System.out.println("27");
-        System.out.println(myBST.rContains(27));
-        System.out.println("17");
 
-        System.out.println(myBST.rContains(17));
+        System.out.println(myBST);
     }
 
 }
