@@ -10,20 +10,19 @@ public class DsaClassesApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DsaClassesApplication.class, args);
-        Heap myHeap = new Heap();
-        myHeap.insert(95);
-        myHeap.insert(75);
-        myHeap.insert(80);
-        myHeap.insert(55);
+        BinarySearchTree myBST = new BinarySearchTree();
+        myBST.insert(47);
+        myBST.insert(21);
+        myBST.insert(76);
+        myBST.insert(18);
+        myBST.insert(27);
+        myBST.insert(52);
+        myBST.insert(82);
+        System.out.println("27");
+        System.out.println(myBST.rContains(27));
+        System.out.println("17");
 
-        myHeap.insert(60);
-        myHeap.insert(50);
-        myHeap.insert(65);
-        System.out.println(myHeap.getHeap());
-        myHeap.remove();
-        System.out.println(myHeap.getHeap());
-        myHeap.remove();
-        System.out.println(myHeap.getHeap());
+        System.out.println(myBST.rContains(17));
     }
 
 }
