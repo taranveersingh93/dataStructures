@@ -1,5 +1,10 @@
 package DataStructures;
 
+import java.util.ArrayList;
+import java.util.Queue;
+import java.util.LinkedList;
+
+
 public class BinarySearchTree {
     public Node root;
     public class Node {
@@ -144,5 +149,23 @@ public class BinarySearchTree {
     public void rDelete(int value) {
         Node currentNode = this.root;
 
+    }
+
+    public ArrayList<Integer> breathFirstSearch() {
+        Node currentNode = root;
+        Queue<Node> queue = new LinkedList<>();
+        ArrayList<Integer> results = new ArrayList<>();
+        queue.add(currentNode);
+        while (!queue.isEmpty()) {
+            currentNode = queue.remove();
+            results.add(currentNode.value);
+            if (currentNode.left != null) {
+                queue.add(currentNode.left);
+            }
+            if (currentNode.right != null) {
+                queue.add(currentNode.right);
+            }
+        }
+        return results;
     }
 }
