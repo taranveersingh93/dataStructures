@@ -84,4 +84,24 @@ public class BinarySearchTree {
     public boolean rContains(int value) {
         return this.rContains(root, value);
     }
+
+    private Node rInsert(Node currentNode, int value) {
+        Node newNode = new Node(value);
+        if (currentNode == null) {
+            return newNode;
+        }
+        if (currentNode.value == value) {
+            return null;
+        }
+        if (value < currentNode.value) {
+            currentNode.left = rInsert(currentNode.left, value);
+        } else {
+            currentNode.right = rInsert(currentNode.right, value);
+        }
+        return currentNode;
+    }
+
+    public void rInsert(int value) {
+        rInsert(this.root, value);
+    }
 }
