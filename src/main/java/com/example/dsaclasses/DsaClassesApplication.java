@@ -19,7 +19,7 @@ public class DsaClassesApplication {
         myBST.insert(52);
         myBST.insert(82);
 
-        System.out.println(myBST);
+        System.out.println(myBST.preOrderDFS());
     }
 
 }

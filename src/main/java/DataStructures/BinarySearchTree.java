@@ -1,5 +1,6 @@
 package DataStructures;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Queue;
 import java.util.LinkedList;
@@ -168,4 +169,25 @@ public class BinarySearchTree {
         }
         return results;
     }
+
+    public ArrayList<Integer> preOrderDFS() {
+        Node currentNode = this.root;
+        ArrayList<Integer> results = new ArrayList<>();
+        preOrderTraverse(currentNode, results);
+        return results;
+    }
+
+    private void preOrderTraverse(Node currentNode, ArrayList<Integer> results) {
+        if (currentNode == null) {
+            return;
+        }
+        results.add(currentNode.value);
+        if (currentNode.left != null) {
+            preOrderTraverse(currentNode.left, results);
+        }
+        if (currentNode.right != null) {
+            preOrderTraverse(currentNode.right, results);
+        }
+    }
+
 }
