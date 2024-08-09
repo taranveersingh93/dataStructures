@@ -190,4 +190,23 @@ public class BinarySearchTree {
         }
     }
 
+    public ArrayList<Integer> postOrderDFS() {
+        Node currentNode = root;
+        ArrayList<Integer> results = new ArrayList<>();
+        postOrderTraverse(currentNode, results);
+        return results;
+    }
+
+    private void postOrderTraverse(Node currentNode, ArrayList<Integer> results) {
+        if (currentNode == null) {
+            return;
+        }
+        if (currentNode.left != null) {
+            postOrderTraverse(currentNode.left, results);
+        }
+        if (currentNode.right != null) {
+            postOrderTraverse(currentNode.right, results);
+        }
+        results.add(currentNode.value);
+    }
 }
