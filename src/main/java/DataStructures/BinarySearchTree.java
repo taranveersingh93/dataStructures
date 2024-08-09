@@ -209,4 +209,26 @@ public class BinarySearchTree {
         }
         results.add(currentNode.value);
     }
+
+    public ArrayList<Integer> inOrderDFS() {
+        Node currentNode = this.root;
+        ArrayList<Integer> results = new ArrayList<>();
+        inOrderTraverse(currentNode, results);
+        return results;
+    }
+
+    private void inOrderTraverse(Node currentNode, ArrayList<Integer> results) {
+        if (currentNode == null) {
+            return;
+        }
+        if (currentNode.left != null) {
+            inOrderTraverse(currentNode.left, results);
+        }
+
+        results.add(currentNode.value);
+
+        if (currentNode.right != null) {
+            inOrderTraverse(currentNode.right, results);
+        }
+    }
 }
